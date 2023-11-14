@@ -2,10 +2,19 @@
 {% block pageTitle %}
   Services for Department for Environment Food & Rural Affairs  - {{serviceName}}
 {% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">GOV.UK Case Manager</h1>
+      
       {{ govukButton({
   text: "Create a case manager",
   classes: "govuk-!-margin-top-2",
