@@ -1,0 +1,219 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  {{name}}
+  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to all cases",
+  href: "all.html"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Case number: {{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}{{ ["0","1","2","3","4","5","6","7","8","9"] | random }}</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{name}}</h1>
+      <p class="govuk-body">
+        No one is currently assigned to the case — <a href="change-user">change <span class="govuk-visually-hidden">assignee</span></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <h2 class="govuk-heading-l">Overview</h2>
+      {% set reference %}
+        {{ ['Preparing papers for advisory board','Being reviewed by the advisory board','Transfer land ownership','Closing the case'] | random }}
+      {% endset -%}
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Date added on"
+            },
+            value: {
+              text: "27 June 2021"
+            }
+          },
+          {
+            key: {
+              text: "Customer reference number"
+            },
+            value: {
+              text: "HDJ2123F"
+            }
+          },
+          {
+            key: {
+              text: "Last change made on"
+            },
+            value: {
+              text: "02 December 2021"
+            }
+          },
+          {
+            key: {
+              text: "Current status"
+            },
+            value: {
+              html: "<strong class='govuk-tag govuk-tag--green'>New</strong>"
+            }
+          },
+          {
+            key: {
+              text: "Payment"
+            },
+            value: {
+              html: "<strong>Not recieved</strong>"
+            }
+          },
+          {
+            key: {
+              text: "Workflow stage"
+            },
+            value: {
+              html: "Application recieved"
+            }
+          }
+        ]
+      }) }}
+      <h2 class="govuk-heading-l">Details</h2>
+      <h3 class="govuk-heading-s">School name and address</h3>
+      <p class="body">
+        Bristol Brunel Academy
+      </p>
+      <h3 class="govuk-heading-s">Local authority name and LA/ESTAB number</h3>
+      <p class="body">
+        Bristol, City of and E06000023
+      </p>
+      <h3 class="govuk-heading-s">School URN</h3>
+      <p class="body">
+        135300
+      </p>
+      <h3 class="govuk-heading-s">Name of headteacher</h3>
+      <p class="body">
+        	Mr Jon Jones
+      </p>
+      <h3 class="govuk-heading-s">School email address</h3>
+      <p class="body">
+        info@bristolbrunelacademy.co.uk
+      </p>
+      <h3 class="govuk-heading-s">Telephone number</h3>
+      <p class="body">
+        01495 631233
+      </p>
+      <h3 class="govuk-heading-s">Name of chair of the governing body</h3>
+      <p class="body">
+        text
+      </p>
+      <h3 class="govuk-heading-s">Email address</h3>
+      <p class="body">
+        jon.jones@bristolbrunelacademy.co.uk
+      </p>
+      <h3 class="govuk-heading-s">Date on which they wish to open as an academy</h3>
+      <p class="body">
+        28 August 2022
+      </p>
+      <h3 class="govuk-heading-s">Application for a multi-academy trust or as a single academy trust</h3>
+      <p class="body">
+        Single academy trust
+      </p>
+      <h3 class="govuk-heading-s">Name of the school(s) they will be supporting and what support they will be providing</h3>
+      <p class="body">
+        text
+      </p>
+      <h3 class="govuk-heading-s">Names of the members of the trust and their experience and background</h3>
+      <p class="body">
+        Bristol Brunel Academy
+      </p>
+      <h3 class="govuk-heading-s">Total number of people on the board of trustees</h3>
+      <p class="body">
+        2
+      </p>
+      <h3 class="govuk-heading-s">Name of the chair of the trust and their experience and background</h3>
+      <p class="body">
+        John Smith
+      </p>
+      <p class="govuk-body">
+          Jane Smith
+      </p>
+      <h3 class="govuk-heading-s">Name of the finance director and their experience and background</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Name of the HR director and their experience and background</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Name of the head of school improvement and their experience and background</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">Age range of the pupils</h3>
+      <p class="body">
+        4
+      </p>
+      <h3 class="govuk-heading-s">List of special educations needs that are provided for</h3>
+      <p class="body">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Multi-Sensory Impairment</li>
+          <li>Physical Disability</li>
+          <li>Hearing Impairment</li>
+        </ul>
+      </p>
+      <h3 class="govuk-heading-s">Number of pupil places for which the school is currently funded</h3>
+      <p class="body">
+        42
+      </p>
+      <h3 class="govuk-heading-s">Does the school have residential provision?</h3>
+      <p class="body">
+        No
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-l">Manage</h2>
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Change case status"
+        },
+        hint: {
+  text: "Current status is recieved"
+},
+        items: [
+          {
+            value: "published",
+            text: "Closed"
+          },
+          {
+            value: "updated",
+            text: "Recieved",
+            selected: true
+          },
+          {
+            value: "views",
+            text: "Delayed"
+          }
+        ]
+      }) }}
+      {{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload supporting documents"
+  }
+}) }}
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "Notes"
+        }
+      }) }}
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+    </div>
+  </div>
+{% endblock %}
