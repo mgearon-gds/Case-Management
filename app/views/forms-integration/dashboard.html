@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Services for Department for Environment Food & Rural Affairs  - {{serviceName}}
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">GOV.UK Forms</h1>
+      {{ govukButton({
+        text: "Create a form",
+        href: "#",
+        isStartButton: true
+      }) }}
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        {{ govukTable({
+          caption: "Your forms",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "Form name"
+            },
+            {
+              text: "Status"
+            }
+          ],
+          rows: [
+            [
+              {
+                html: "<a href='case-manager'>Fishing Permit Application Form</a>"
+              },
+              {
+                html: "<strong class='govuk-tag govuk-tag--green'>Live</strong>"
+              }
+            ],
+            [
+              {
+                html: "<a href='case-manager'>Common land and greens: statutory disposition (CA8)</a>"
+              },
+              {
+                html: "<strong class='govuk-tag govuk-tag--purple	'>Draft</strong>"
+              }
+            ],
+            [
+              {
+                html: "<a href='case-manager'>Apply to protect a wine name or aromatised wine name</a>"
+              },
+              {
+                html: "<strong class='govuk-tag govuk-tag--purple'>Draft</strong>"
+              }
+            ]
+          ]
+        }) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

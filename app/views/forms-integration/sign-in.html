@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Sign in
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-xl">Sign in</h1>
+      <p class="govuk-body">
+        If you do not have an account, you can <a href="/sign-up/sign-up" class="govuk-link">create one now</a>.
+        </p>
+        {{error}}
+        <form action="/application/sign-in" method="post">
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        id: "email",
+        name: "email"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Password"
+        },
+        id: "password",
+        type: "password",
+        name: "password"
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        href: "dashboard"
+      }) }}
+      </form>
+      <p>
+        <a href="reset-password.html" class="govuk-link block govuk-body govuk-!-font-size-9">Forgot your password?</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

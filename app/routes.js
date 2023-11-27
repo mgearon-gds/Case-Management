@@ -24,3 +24,9 @@ router.get('/case-manager', function (req, res) {
       cases: req.session.cases
     })
   })
+
+  router.get('/forms-integration/case-manager', function (req, res) {
+    res.render('forms-integration/case-manager', {
+      cases: req.session.cases
+    })
+  })
