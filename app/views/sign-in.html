@@ -3,7 +3,12 @@
   Sign in
 {% endblock %}
 {% block beforeContent %}
-
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">

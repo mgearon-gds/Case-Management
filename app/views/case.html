@@ -18,15 +18,24 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
-
+  <h1 class="govuk-heading-xl">Overview of the case</h1>
     </div>
   </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
-
+      <nav>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a class="govuk-link" href="word?word={{name}}">Overview</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="log?word={{name}}">Activity log</a>
+          </li>
+        </ul>
+      </nav>
       </div>
       <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-xl">Overview of the case</h2>
+    
       {% set reference %}
         {{ ['Preparing papers for advisory board','Being reviewed by the advisory board','Transfer land ownership','Closing the case'] | random }}
       {% endset -%}
