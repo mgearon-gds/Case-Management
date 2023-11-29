@@ -158,7 +158,13 @@
           {% for case in cases %} 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><a href="case" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></th>
-              <td class="govuk-table__cell">{{ case.added }}</td>
+              <td class="govuk-table__cell">
+                {% if case.added is not defined or case.added == '' %}
+                  <strong class="govuk-body govuk-!-font-weight-bold">Not assigned</strong>
+                {% else %}
+                  {{ case.added | title }}
+                {% endif %}
+              </td>
               <td class="govuk-table__cell">{{ case.addedon }}</td>
               <td class="govuk-table__cell">{{ case.status | title }}</td>
             </tr>
