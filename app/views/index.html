@@ -12,63 +12,18 @@
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">GOV.UK Case Manager</h1>
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Version 1</span>
+      <h1 class="govuk-heading-xl">Case manager integration with Forms</h1>
+      <p class="govuk-body-lead">A concept demo which shows an example of how a case manager could integrate with the GOV.UK Forms product</p>
+      <p class="govuk-body">This prototype has not been tested with users and is only a concept idea</p>
+      <a href="sign-in" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
       
-      {{ govukButton({
-  text: "Create a case manager",
-  classes: "govuk-!-margin-top-2",
-  href: "create/type"
-}) }}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <div class="govuk-form-group govuk-!-margin-bottom-2">
-
-{{ govukTable({
-  caption: "Your case management",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "Case manager name"
-    },
-    {
-      text: "Status"
-    }
-  ],
-  rows: [
-    [
-      {
-        html: "<a href='case-manager'>Fishing Permit Application Form</a>"
-      },
-      {
-        html: "      <strong class='govuk-tag govuk-tag--pink'>
-          Draft
-        </strong>"
-      }
-    ],
-    [
-      {
-        html: "<a href='case-manager'>Common land and greens: statutory disposition (CA8)</a>"
-      },
-      {
-        html: "<strong class='govuk-tag govuk-tag--pink'>
-          Draft
-        </strong>"
-      }
-    ],
-    [
-      {
-        html: "<a href='case-manager'>Apply to protect a wine name or aromatised wine name</a>"
-      },
-      {
-        html: "<strong class='govuk-tag govuk-tag--pink'>
-          Draft
-        </strong>"
-      }
-    ]
-  ]
-}) }}
   </div>
       </div>
 
