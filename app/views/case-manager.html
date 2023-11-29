@@ -135,15 +135,13 @@
 </div>
 <div class="govuk-grid-column-two-thirds">
   <div class="govuk-form-group govuk-!-margin-bottom-2">
-    <label class="govuk-label govuk-label--m" for="event-name">
+    <label class="govuk-label govuk-label--m" for="search-cases">
       Search for a service
     </label>
     <div class="wrapper">
-      <input class="govuk-input" id="event-name" name="event-name" type="text">
-      {{ govukButton({
-        text: "Search",
-        classes: "govuk-button--secondary govuk-!-margin-bottom-8 search"
-      }) }}
+      <input class="govuk-input" id="search-cases" name="searchCases" type="text">
+      <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-8 search" id="searchButton">Search</button>
+
     </div>
 
     <table class="govuk-table">
