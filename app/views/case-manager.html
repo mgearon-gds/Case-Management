@@ -35,8 +35,8 @@
           <div role="widget" class="filter">
             <div id="filter-crn" class="filters-wrapper govuk-!-margin-bottom-4" aria-hidden="true" aria-labelledby="filter-label-crn">
               {{ govukCheckboxes({
-                idPrefix: "filter-word-type",
-                name: "filterWordType",
+                idPrefix: "filter-assigned-to",
+                name: "filterAssignedTo",
                 classes: "govuk-!-margin-bottom-6 govuk-checkboxes--small",
                 fieldset: {
                   legend: {
@@ -47,22 +47,17 @@
                 },
                 items: [
                   {
-                    value: "Denis Vishnu",
+                    value: "denis-vishnu",
                     text: "Denis Vishnu",
                     checked: filterParams.status.referred.checked
                   },
                   {
-                    value: "Sasha Willifrid",
-                    text: "Sasha Willifrid",
-                    checked: filterParams.status.referred.checked
-                  },
-                  {
-                    value: "Orla Tegan",
+                    value: "orla-tegan",
                     text: "Orla Tegan",
                     checked: filterParams.status.accepted.checked
                   },
                   {
-                    value: "Sasha Willifrid",
+                    value: "sasha-willifrid",
                     text: "Sasha Willifrid",
                     checked: filterParams.status.accepted.checked
                   },
@@ -90,22 +85,17 @@
           },
           items: [
           {
-            value: "Not assigned",
-            text: "Not assigned",
-            checked: filterParams.status.referred.checked
-          },
-          {
-            value: "Delayed",
-            text: "Delayed",
+            value: "recieved",
+            text: "Recieved",
             checked: filterParams.status.referred.checked
           },
             {
-              value: "Recieved",
-              text: "Recieved",
+              value: "processing",
+              text: "Processing",
               checked: filterParams.status.referred.checked
             },
             {
-              value: "Closed",
+              value: "closed",
               text: "Closed",
               checked: filterParams.status.accepted.checked
             }
@@ -121,8 +111,8 @@
           hint: {
             text: "For example, 2005 or 21/11/2014"
           },
-          id: "event-name",
-          name: "event-name"
+          id: "from-date",
+          name: "fromDate"
         }) }}
         {{ govukInput({
           label: {
@@ -132,8 +122,8 @@
           hint: {
             text: "For example, 2019 or 21/11/2019"
           },
-          id: "event-name",
-          name: "event-name"
+          id: "to-date",
+          name: "toDate"
         }) }}
       </div>
       {{ govukButton({

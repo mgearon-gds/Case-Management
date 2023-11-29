@@ -19,7 +19,6 @@ router.get('/', function (req, res) {
       })
   })
 
-
   router.get('/case-manager', function (req, res) {
     res.render('case-manager', {
       cases: req.session.cases

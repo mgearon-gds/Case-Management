@@ -119,35 +119,59 @@
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <h2 class="govuk-heading-l">Manage</h2>
       {{ govukSelect({
-        id: "sort",
-        name: "sort",
+        id: "assigned-to",
+        name: "assigned-to",
+        label: {
+          text: "Change who is assigned to the case"
+        },
+        items: [
+          {
+            value: "sasha-willifrid",
+            text: "Sasha Willifrid"
+          },
+          {
+            value: "orla-tegan",
+            text: "Orla Tegan",
+            selected: true
+          },
+          {
+            value: "denis-vishnu",
+            text: "Denis Vishnu"
+          }
+        ]
+      }) }}
+      {{ govukSelect({
+        id: "case-status",
+        name: "case-status",
         label: {
           text: "Change case status"
         },
         hint: {
-  text: "Current status is recieved"
-},
+          text: "Current status is recieved"
+        },
         items: [
           {
-            value: "published",
-            text: "Closed"
-          },
-          {
-            value: "updated",
+            value: "recieved",
             text: "Recieved",
             selected: true
           },
           {
-            value: "views",
-            text: "Delayed"
+            value: "processing",
+            text: "Processing"
+          },
+          {
+            value: "closed",
+            text: "Closed"
           }
+
+
         ]
       }) }}
       {{ govukTextarea({
         name: "more-detail",
         id: "more-detail",
         label: {
-          text: "Notes"
+          text: "Add notes to the case"
         }
       }) }}
       {{ govukButton({
