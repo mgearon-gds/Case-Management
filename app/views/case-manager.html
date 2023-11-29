@@ -149,14 +149,18 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">ID</th>
+            <th scope="col" class="govuk-table__header">Assigned to</th>
             <th scope="col" class="govuk-table__header">Date recieved</th>
+            <th scope="col" class="govuk-table__header">Case status</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           {% for case in cases %} 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><a href="case" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></th>
-              <td class="govuk-table__cell">{{ ["02 April 2009", "05 November 2014", "22 August 2008", "28 Febuary 2018", "02 December 2016", "14 May 2008", "22 June 2019"] | random }}</td>
+              <td class="govuk-table__cell">{{ case.added }}</td>
+              <td class="govuk-table__cell">{{ case.addedon }}</td>
+              <td class="govuk-table__cell">{{ case.status | title }}</td>
             </tr>
           {% endfor %}
         </tbody>  
