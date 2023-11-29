@@ -58,6 +58,8 @@ router.get('/case-manager', function (req, res) {
     previousUrl,
     nextUrl,
     paginationItems,
-    searchTerm
+    searchTerm,
+    totalItems,
+    itemsPerPage
   });
 });

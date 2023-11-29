@@ -165,13 +165,20 @@
                   {{ case.added | title }}
                 {% endif %}
               </td>
-              <td class="govuk-table__cell">{{ case.addedon }}</td>
+              <td class="govuk-table__cell">{{ case.addedon | title  }}</td>
               <td class="govuk-table__cell">{{ case.status | title }}</td>
             </tr>
           {% endfor %}
         </tbody>  
      </table>
-      {% include "layouts/pagination.njk" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+        {% include "layouts/pagination.njk" %}
+      </div>
+      <div>
+        <p class="govuk-body-s">Showing 1 to 20 of {{totalItems}} results</p>
+      </div>
+    </div>
 
   </div>
 </div>
