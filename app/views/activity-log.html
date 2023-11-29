@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case manager for Fishing Permit Application Form
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "case-manager"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+  <h1 class="govuk-heading-xl">Activity</h1>
+    </div>
+  </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+      <nav>
+        <ul class="govuk-list govuk-list--spaced">
+          <li>
+            <a class="govuk-link" href="case">Overview</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="activity-log">Activity log</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Status change</h3>
+      <p class="govuk-body-s">
+        Lucy Connelly, <time>25 March 2022 at 11:10pm</time>
+      </p>
+      <p>
+        Status changed from recieved to accepted.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Note added</h3>
+      <p class="govuk-body-s">
+        Joseph Nguyen, 21 March 2022 at 7:06pm
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor est quis orci elementum tincidunt. Phasellus efficitur justo vitae dictum tempor. Donec id leo nisl. Vestibulum tempor sodales convallis. Mauris dictum enim risus, et aliquam magna ultrices in. Ut rhoncus tempus arcu, non convallis magna. Ut blandit, urna sed hendrerit elementum, justo eros mattis eros, quis pellentesque lacus leo id quam. Quisque mattis varius felis, et commodo tortor pharetra eu. In vehicula, mi in ornare vestibulum, lectus justo dictum ex, a blandit magna felis quis sem. Vivamus sed lobortis nulla.
+      </p>
+      <h4 class="govuk-heading-s">Attached documents</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="#">Document 1 (PDF, 660 KB, 10 pages)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Document 2 (Word Document, 2 MB, 20 pages)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Document 3 (Excel Document, 200 KB)</a>
+        </li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Person assigned</h3>
+      <p class="govuk-body-s">
+        21 March 2022 at 7:06pm
+      </p>
+      <p>
+        Sasha Willifrid has been assigned to this case.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      {{govukTag({
+        text: "Waiting on",
+        classes: "govuk-tag--yellow"
+      })}}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Reminder sent</h3>
+      <p>
+        This case has not been assigned in over 7 days.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Confirmation email sent to applicant</h3>
+      <p class="govuk-body-s">
+        Sent using GOV.UK Notify
+      </p>
+      <p>
+        A confirmation email was sent to the applicant on 7 Febuary 2022.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Application recieved</h3>
+      <p>
+        Application recieved through the online service on 7 Febuary 2022.
+      </p>
+      </div>
+    </div>
+{% endblock %}
