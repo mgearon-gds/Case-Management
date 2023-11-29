@@ -1,14 +1,16 @@
 {% extends "layouts/main.html" %}
+
 {% block pageTitle %}
-  Services for Department for Environment Food & Rural Affairs  - {{serviceName}}
+  GOV.UK Forms
 {% endblock %}
+
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Alpha"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
