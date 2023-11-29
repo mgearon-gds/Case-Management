@@ -67,7 +67,7 @@
                     checked: filterParams.status.accepted.checked
                   }
                 ]
-              }) }}
+            }) }}
         </div>
       </div>
       <div role="widget" class="filter govuk-!-margin-bottom-6">
@@ -132,63 +132,39 @@
       }) }}
     </form>
   </section>
-      </div>
-      <div class="govuk-grid-column-two-thirds">
-                  <div class="govuk-form-group govuk-!-margin-bottom-2">
-  <label class="govuk-label govuk-label--m" for="event-name">
-        Search for a service
-      </label>
+</div>
+<div class="govuk-grid-column-two-thirds">
+  <div class="govuk-form-group govuk-!-margin-bottom-2">
+    <label class="govuk-label govuk-label--m" for="event-name">
+      Search for a service
+    </label>
     <div class="wrapper">
-    <input class="govuk-input" id="event-name" name="event-name" type="text">
-    {{ govukButton({
-  text: "Search",
-  classes: "govuk-button--secondary govuk-!-margin-bottom-8 search"
-  }) }}
-  </div>
-        <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">All cases</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">ID</th>
-      <th scope="col" class="govuk-table__header">Date recieved</th>
-    </tr>
-  </thead>
-  
-
-     <tbody class="govuk-table__body">
-        {% for case in cases %}
-   
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"><a href="case" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></th>
-      <td class="govuk-table__cell">{{ ["02 April 2009", "05 November 2014", "22 August 2008", "28 Febuary 2018", "02 December 2016", "14 May 2008", "22 June 2019"] | random }}</td>
-    </tr>
-   {% endfor %}
-  </tbody>
-          
-     </table>
-     {{ govukPagination({
-  previous: {
-    href: "#"
-  },
-  next: {
-    href: "#"
-  },
-  items: [
-    {
-      number: 1,
-      href: "#"
-    },
-    {
-      number: 2,
-      current: true,
-      href: "#"
-    },
-    {
-      number: 3,
-      href: "#"
-    }
-  ]
-}) }}
-      </div>
+      <input class="govuk-input" id="event-name" name="event-name" type="text">
+      {{ govukButton({
+        text: "Search",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-8 search"
+      }) }}
     </div>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">All cases</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">ID</th>
+            <th scope="col" class="govuk-table__header">Date recieved</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for case in cases %} 
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="case" class="govuk-link govuk-link--no-visited-state">{{ case.word }}</a></th>
+              <td class="govuk-table__cell">{{ ["02 April 2009", "05 November 2014", "22 August 2008", "28 Febuary 2018", "02 December 2016", "14 May 2008", "22 June 2019"] | random }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>  
+     </table>
+      {% include "layouts/pagination.njk" %}
+
+  </div>
+</div>
 {% endblock %}
