@@ -37,6 +37,8 @@ router.get('/case-manager', function (req, res) {
   const totalItems = cases.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
+  
+
   const paginationItems = [];
   for (let i = 1; i <= totalPages; i++) {
     paginationItems.push({
@@ -45,8 +47,8 @@ router.get('/case-manager', function (req, res) {
     });
   }
 
-  const startIdx = (currentPage - 1) * itemsPerPage;
-  const endIdx = startIdx + itemsPerPage;
+  const startIdx = (currentPage - 1) * itemsPerPage + 1;
+  const endIdx = Math.min(currentPage * itemsPerPage, totalItems);
   const paginatedCases = filteredCases.slice(startIdx, endIdx);
 
   const previousUrl = currentPage > 1 ? `/case-manager?page=${currentPage - 1}&search=${searchTerm}` : null;
@@ -59,7 +61,8 @@ router.get('/case-manager', function (req, res) {
     nextUrl,
     paginationItems,
     searchTerm,
-    totalItems,
-    itemsPerPage
+    startIdx,
+    endIdx,
+    totalItems
   });
 });

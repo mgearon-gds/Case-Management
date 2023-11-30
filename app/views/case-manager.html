@@ -171,12 +171,18 @@
           {% endfor %}
         </tbody>  
      </table>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+    <div class="govuk-grid-row govuk-!-margin-bottom-6 govuk-paginationResults">
+      <div class="govuk-grid-column-one-half">
         {% include "layouts/pagination.njk" %}
       </div>
-      <div>
-        <p class="govuk-body-s">Showing 1 to 20 of {{totalItems}} results</p>
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-body-s govuk-!-text-align-right govuk-!-margin-bottom-0">
+          {% if totalItems > 0 %}
+            Showing {{ startIdx }} to {{ endIdx }} of {{ totalItems }} results
+          {% else %}
+            No results found
+          {% endif %}
+        </p>
       </div>
     </div>
 
