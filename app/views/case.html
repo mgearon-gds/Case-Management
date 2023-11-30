@@ -21,7 +21,19 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
-  <h1 class="govuk-heading-xl">Overview of the case</h1>
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Overview of the case</h1>
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Export case as:</p>
+      <ul class="govuk-list govuk-export">
+        <li>
+          <a class="govuk-link" href="#">CSV</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">JSON</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">PDF</a>
+        </li>
+      </ul>
     </div>
   </div>
     <div class="govuk-grid-row">
@@ -86,6 +98,8 @@
           }
         ]
       }) }}
+
+
         <h2 class="govuk-heading-l">Attachments</h2>
         <p class="govuk-body">Attachments from submitted form:</p>
 <ul class="govuk-list govuk-list--bullet">

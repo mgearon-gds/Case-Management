@@ -21,12 +21,10 @@ router.get('/', function (req, res) {
 
 //Case manager page
 
-
-router.get('/case-manager', function (req, res) {
-  // Example pagination logic
-  const itemsPerPage = 20;
-  const currentPage = req.query.page || 1; // Get the page from the query parameters
-  const searchTerm = req.query.search || ''; // Get the search term from the query parameters
+router.get('/case-manager', (req, res) => {
+  const itemsPerPage = 10;
+  const currentPage = parseInt(req.query.page) || 1;
+  const searchTerm = req.query.search || '';
   const cases = req.session.cases || [];
 
   // Filter cases based on the search term
@@ -34,35 +32,33 @@ router.get('/case-manager', function (req, res) {
     caseItem.word.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const totalItems = cases.length;
+  const totalItems = filteredCases.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  
+  const startIdx = (currentPage - 1) * itemsPerPage + 1;
+  const endIdx = Math.min(currentPage * itemsPerPage, totalItems);
 
   const paginationItems = [];
   for (let i = 1; i <= totalPages; i++) {
     paginationItems.push({
       number: i,
-      href: `/case-manager?page=${i}&search=${searchTerm}`, // Include page number in the URL
+      href: `/case-manager?page=${i}&search=${searchTerm}`,
     });
   }
 
-  const startIdx = (currentPage - 1) * itemsPerPage + 1;
-  const endIdx = Math.min(currentPage * itemsPerPage, totalItems);
-  const paginatedCases = filteredCases.slice(startIdx, endIdx);
-
   const previousUrl = currentPage > 1 ? `/case-manager?page=${currentPage - 1}&search=${searchTerm}` : null;
-  const nextUrl = currentPage < totalPages ? `/case-manager?page=${parseInt(currentPage) + 1}&search=${searchTerm}` : null;
+  const nextUrl = currentPage < totalPages ? `/case-manager?page=${currentPage + 1}&search=${searchTerm}` : null;
+
+  const paginatedCases = filteredCases.slice(startIdx - 1, endIdx);
 
   res.render('case-manager', {
     cases: paginatedCases,
-    info: "test",
     previousUrl,
     nextUrl,
     paginationItems,
     searchTerm,
     startIdx,
     endIdx,
-    totalItems
+    totalItems,
   });
 });
