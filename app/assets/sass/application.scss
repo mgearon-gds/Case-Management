@@ -3,6 +3,11 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Flow+Block&family=Flow+Circular&display=swap');
+
+body *{
+    font-family: Balsamiq Sans, sans-serif !important;
+}
 // Add extra styles here
 .wrapper{
     display: flex;
@@ -14,7 +19,74 @@
     align-items: center;
 }
 
+.govuk-button{
+    background-color: white !important;
+    color: black !important;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border:solid 5px hsla(0, 0%, 0%, 1);
+    box-shadow: 4px 3px 0px 0px rgba(0,0,0,1) !important;
+}
+
 .govuk-export{
     display: flex;
     gap: 10px;
 }
+
+.govuk-block{
+    font-family: Flow Circular, sans-serif !important;
+
+}
+
+
+
+.govuk-header, .govuk-footer{
+    background-color: #c1c1c1;
+    color: black;
+}
+
+.govuk-header__container{
+    border-bottom-color: black;
+}
+
+.govuk-header__link:link, .govuk-header__link:visited{
+    color: black;
+}
+
+.govuk-input {
+    border-style: solid;
+    border-width: 5px;
+    border-image: url(../images/wireframe-assets/border.svg) 10 10 10 10 stretch stretch;
+  }
+
+  .govuk-tag{
+    background-color: black;
+    color: white;
+  }
+
+  .govuk-checkboxes__input, .govuk-select, .govuk-textarea {
+    border-width: 6px 6px 6px 6px;
+    border-image: url(../images/wireframe-assets/checkbox.svg) 6 6 6 6 stretch stretch;
+  }
+  
+  .govuk-panel--confirmation{
+    background-color: #c1c1c1;
+    color: black;
+  }
+
+  .govuk-checkboxes__input {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: transparent;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .govuk-checkboxes__input:after {
+    font-size: 1.25em;
+    content: " ";
+    margin-bottom: -0.25em;
+  }

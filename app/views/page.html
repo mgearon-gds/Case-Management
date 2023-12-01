@@ -1,0 +1,805 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Case manager integration concept
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Version 1</span>
+      <h1 class="govuk-heading-xl">Balsamiq inspired interface</h1>
+      {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+            {
+                heading: {
+                text: "Writing well for the web"
+                },
+                content: {
+                html: '<p class="govuk-body">This is the content for Writing well for the web.</p>'
+                }
+            },
+            {
+                heading: {
+                text: "Writing well for specialists"
+                },
+                content: {
+                html: '<p class="govuk-body">This is the content for Writing well for specialists.</p>'
+                }
+            },
+            {
+                heading: {
+                text: "Know your audience"
+                },
+                content: {
+                html: '<p class="govuk-body">This is the content for Know your audience.</p>'
+                }
+            },
+            {
+                heading: {
+                text: "How people read"
+                },
+                content: {
+                html: '<p class="govuk-body">This is the content for How people read.</p>'
+                }
+            }
+        ]
+        }) }}
+        {{ govukBackLink({
+            text: "Back",
+            href: "#"
+        }) }}
+        {{ govukBreadcrumbs({
+            items: [
+                {
+                    text: "Home",
+                    href: "#"
+                },
+                {
+                    text: "Passports, travel and living abroad",
+                    href: "#"
+                },
+                {
+                    text: "Travel abroad",
+                    href: "#"
+                }
+            ]
+        }) }}
+        {{ govukButton({
+            text: "Save and continue"
+        }) }}
+        {{ govukButton({
+            text: "Start now",
+            href: "#",
+            isStartButton: true
+        }) }}
+        {{ govukButton({
+            text: "Find address",
+            classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+            text: "Delete account",
+            classes: "govuk-button--warning"
+        }) }}
+        {{ govukButton({
+            text: "Disabled button",
+            disabled: true
+        }) }}
+        {{ govukCharacterCount({
+            id: "label-as-page-heading",
+            name: "labelAsPageHeading",
+            maxlength: 200,
+            label: {
+                text: "Describe the nature of your event"
+            }
+        }) }}
+        {{ govukCheckboxes({
+            name: "nationality",
+            fieldset: {
+                legend: {
+                    text: "What is your nationality?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "If you have dual nationality, select all options that are relevant to you."
+            },
+            errorMessage: {
+                text: "Select if you are British, Irish or a citizen of a different country"
+            },
+            items: [
+                {
+                    value: "british",
+                    text: "British",
+                    hint: {
+                        text: "including English, Scottish, Welsh and Northern Irish"
+                    }
+                },
+                {
+                    value: "irish",
+                    text: "Irish"
+                },
+                {
+                    value: "other",
+                    text: "Citizen of another country"
+                }
+            ]
+        }) }}
+        {% set html %}
+            <p class="govuk-body">We use some essential cookies to make this service work.</p>
+            <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+        {% endset %}
+
+        {{ govukCookieBanner({
+            ariaLabel: "Cookies on [name of service]",
+            messages: [
+                {
+                    headingText: "Cookies on [name of service]",
+                    html: html,
+                    actions: [
+                        {
+                            text: "Accept analytics cookies",
+                            type: "button"
+                        },
+                        {
+                            text: "Reject analytics cookies",
+                            type: "button"
+                        },
+                        {
+                            text: "View cookies",
+                            href: "#"
+                        }
+                    ]
+                }
+            ]
+        }) }}
+        {{ govukDateInput({
+            id: "passport-issued",
+            namePrefix: "passport-issued",
+            fieldset: {
+                legend: {
+                    text: "When was your passport issued?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "For example, 27 3 2007"
+            }
+        }) }}
+        {{ govukDetails({
+            summaryText: "Help with nationality",
+            text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+        }) }}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+                {
+                    text: "Enter your full name",
+                    href: "#"
+                },
+                {
+                    text: "The date your passport was issued must be in the past",
+                    href: "#"
+                }
+            ]
+        }) }}
+        {{ govukFileUpload({
+            id: "file-upload-1",
+            name: "fileUpload1",
+            label: {
+                text: "Upload a file"
+            }
+        }) }}
+        {{ govukInsetText({
+            text: "It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application."
+        }) }}
+        {% set html %}
+            <p class="govuk-notification-banner__heading">
+                You have 7 days left to send your application.
+                <a class="govuk-notification-banner__link" href="#">View application</a>.
+            </p>
+        {% endset %}
+        {{ govukNotificationBanner({
+            html: html
+        }) }}
+        {{ govukPagination({
+            previous: {
+                href: "#"
+            },
+            next: {
+                href: "#"
+            },
+            items: [
+                {
+                    number: 1,
+                    href: "#"
+                },
+                {
+                    number: 2,
+                    current: true,
+                    href: "#"
+                },
+                {
+                    number: 3,
+                    href: "#"
+                }
+            ]
+        }) }}
+        {{ govukPagination({
+            previous: {
+                labelText: "Applying for a provisional lorry or bus licence",
+                href: "#"
+            },
+            next: {
+                labelText: "Driver CPC part 1 test: theory",
+                href: "#"
+            }
+        }) }}
+        {{ govukPanel({
+            titleText: "Application complete",
+            html: "Your reference number<br><strong>HDJ2123F</strong>"
+        }) }}
+        {{ govukRadios({
+            name: "whereDoYouLive",
+            fieldset: {
+                legend: {
+                    text: "Where do you live?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                    value: "england",
+                    text: "England"
+                },
+                {
+                    value: "scotland",
+                    text: "Scotland"
+                },
+                {
+                    value: "wales",
+                    text: "Wales"
+                },
+                {
+                    value: "northern-ireland",
+                    text: "Northern Ireland"
+                }
+            ]
+        }) }}
+        {{ govukSelect({
+            id: "sort",
+            name: "sort",
+            label: {
+                text: "Sort by"
+            },
+            items: [
+                {
+                    value: "published",
+                    text: "Recently published"
+                },
+                {
+                    value: "updated",
+                    text: "Recently updated",
+                    selected: true
+                },
+                {
+                    value: "views",
+                    text: "Most views"
+                },
+                {
+                    value: "comments",
+                    text: "Most comments"
+                }
+            ]
+        }) }}
+        {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Add",
+            visuallyHiddenText: "contact details"
+          },
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+{{ govukTable({
+  caption: "Dates and amounts",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Date"
+    },
+    {
+      text: "Amount"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "First 6 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Next 33 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Total estimated pay"
+      },
+      {
+        text: "£4,282.20"
+      }
+    ]
+  ]
+}) }}
+{% set pastDayHtml %}
+<h2 class="govuk-heading-l">Past day</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "3"
+      },
+      {
+        text: "0"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1"
+      },
+      {
+        text: "0"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "2"
+      },
+      {
+        text: "0"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set pastWeekHtml %}
+<h2 class="govuk-heading-l">Past week</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "24"
+      },
+      {
+        text: "18"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "16"
+      },
+      {
+        text: "20"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "24"
+      },
+      {
+        text: "27"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Past month</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "98"
+      },
+      {
+        text: "95"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "122"
+      },
+      {
+        text: "131"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "126"
+      },
+      {
+        text: "142"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Past year</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened"
+    },
+    {
+      text: "Cases closed"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "1380"
+      },
+      {
+        text: "1472"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1129"
+      },
+      {
+        text: "1083"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "1539"
+      },
+      {
+        text: "1265"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Past day",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Past week",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    {
+      label: "Past month",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
+    },
+    {
+      label: "Past year",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col"> Class name </th>
+      <th class="govuk-table__header" scope="col"> Tag </th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--grey </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey">
+          Inactive
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--green </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          New
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--turquoise </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--turquoise">
+          Active
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--blue </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--blue">
+          Pending
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--purple </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--purple">
+          Received
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--pink </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--pink">
+          Sent
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--red </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--orange </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--orange">
+          Declined
+        </strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code> govuk-tag--yellow </code>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">
+          Delayed
+        </strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{{ govukInput({
+  label: {
+    text: "What is the name of the event?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  id: "event-name",
+  name: "eventName"
+}) }}
+{{ govukTextarea({
+  name: "moreDetail",
+  id: "more-detail",
+  label: {
+    text: "Can you provide more detail?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+  }
+}) }}
+{{ govukWarningText({
+  text: "You can be fined up to £5,000 if you do not register.",
+  iconFallbackText: "Warning"
+}) }}
+<span class="govuk-caption-xl">govuk-caption-xl</span>
+<h1 class="govuk-heading-xl">govuk-heading-xl</h1>
+<span class="govuk-caption-l">govuk-caption-l</span>
+<h1 class="govuk-heading-l">govuk-heading-l</h1>
+<span class="govuk-caption-m">govuk-caption-m</span>
+<h1 class="govuk-heading-m">govuk-heading-m</h1>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--visible">
+<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac posuere diam. Praesent laoreet risus non felis malesuada efficitur. Ut nec purus hendrerit, elementum erat in, varius mauris. In hac habitasse platea dictumst. Vestibulum ut malesuada nisi. Vestibulum sodales felis lectus, non bibendum diam fringilla nec. Suspendisse dignissim ex cursus est volutpat, ac facilisis turpis hendrerit. Mauris condimentum turpis egestas ipsum venenatis finibus.</p>
+
+<p class="govuk-body govuk-block">Cras fringilla erat ligula. Maecenas vitae sollicitudin leo. Pellentesque suscipit felis ac est euismod sodales. Nullam vestibulum aliquet lectus eu fringilla. Donec rutrum mattis luctus. Duis justo velit, auctor quis massa in, tincidunt varius quam. Nullam congue tincidunt lacus rhoncus tristique. Integer felis neque, vehicula ut nisl eget, ullamcorper accumsan velit. Cras pellentesque sapien non felis vehicula, vitae malesuada quam pretium. Nam non velit vel dui interdum rutrum. Fusce tempus lacinia nisl mattis lobortis. Etiam malesuada mattis purus, in hendrerit nisi malesuada fermentum. Suspendisse tempus rhoncus diam, sit amet sollicitudin dolor lobortis quis. Maecenas id egestas velit.</p>
+    </div>
+  </div>
+{% endblock %}
