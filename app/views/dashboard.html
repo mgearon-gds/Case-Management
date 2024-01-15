@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK Forms
+  GOV.UK Cases
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,9 +15,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">GOV.UK Forms</h1>
+      <h1 class="govuk-heading-xl">GOV.UK Cases</h1>
       {{ govukButton({
-        text: "Create a form",
+        text: "Create a case manager",
         href: "#",
         isStartButton: true
       }) }}
@@ -27,12 +27,12 @@
     <div class="govuk-grid-column-full">
       <div class="govuk-form-group govuk-!-margin-bottom-2">
         {{ govukTable({
-          caption: "Your forms",
+          caption: "Your cases",
           captionClasses: "govuk-table__caption--m",
           firstCellIsHeader: true,
           head: [
             {
-              text: "Form name"
+              text: "Case name"
             },
             {
               text: "Status"
