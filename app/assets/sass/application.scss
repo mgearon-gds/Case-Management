@@ -21,3 +21,20 @@
     display: flex;
     gap: 10px;
 }
+
+.search-term{
+    background-color: #f3f2f1;
+    border: 1px solid #f3f2f1;
+}
+
+.search-term-blank{
+    border: 1px dashed #b1b4b6;
+}
+
+.search-term, .search-term-blank{
+    font-family: "GDS Transport", arial, sans-serif;
+    display: inline;
+    padding: 4px 6px 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
